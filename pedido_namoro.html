@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Namoro</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffccff;
+            margin-top: 50px;
+        }
+        .container {
+            position: relative;
+            display: inline-block;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ff1493;
+        }
+        button {
+            padding: 15px 25px;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        #sim {
+            background-color: #32cd32;
+            color: white;
+        }
+        #nao {
+            background-color: #ff4d4d;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quer namorar comigo? 💖</h1>
+    <div class="container">
+        <button id="sim" onclick="aceitar()">Sim!</button>
+        <button id="nao" onmouseover="fugir()">Não</button>
+    </div>
+
+    <script>
+        function aceitar() {
+            alert("Você fez a melhor escolha! 💕😍");
+        }
+
+        function fugir() {
+            let botaoNao = document.getElementById("nao");
+            let x = Math.random() * (window.innerWidth - botaoNao.offsetWidth - 50);
+            let y = Math.random() * (window.innerHeight - botaoNao.offsetHeight - 50);
+            botaoNao.style.left = `${x}px`;
+            botaoNao.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
